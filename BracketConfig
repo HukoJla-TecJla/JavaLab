@@ -1,0 +1,47 @@
+package org.example;
+import java.util.Arrays;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+class BracketConfig {
+    @JsonProperty("bracket")
+    private BracketPair[] brackets;
+
+    public BracketPair[] getBrackets() {
+        return brackets;
+    }
+
+    public void setBrackets(BracketPair[] brackets) {
+        this.brackets = brackets;
+    }
+
+    public static class BracketPair {
+        private String left;
+        private String right;
+
+        public String getLeft() {
+            return left;
+        }
+
+        public void setLeft(String left) {
+            this.left = left;
+        }
+
+        public String getRight() {
+            return right;
+        }
+
+        public void setRight(String right) {
+            this.right = right;
+        }
+
+        @Override
+        public String toString() {
+            return "BracketPair{left='" + left + "', right='" + right + "'}";
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "BracketConfig{brackets=" + Arrays.toString(brackets) + "}";
+    }
+}
